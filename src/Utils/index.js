@@ -50,3 +50,81 @@ export const isJSONString = (str) => {
     return false;
   }
 };
+
+export const getInfoFromCreator = (creator) => {
+  const creatorInfo = [
+    {
+      name: 'Tik Tok Profile',
+      link: creator.tiktok_link || '',
+      value: creator.tiktok_link ? 'View TikTok' : 'none'
+    },
+    {
+      name: 'Instagram Profile',
+      link: creator.instagram_link || '',
+      value: creator.instagram_link ? 'View Instagram' : 'none'
+    },
+    {
+      name: 'YouTube Channel',
+      link: creator.youtube_link || '',
+      value: creator.youtube_link ? 'View Youtube' : 'none'
+    },
+    {
+      name: 'Presented By',
+      link: '',
+      value: creator.manager || ''
+    },
+    {
+      name: 'TikTok Followers',
+      link: '',
+      value: creator.tiktok || 0
+    },
+    {
+      name: 'Instagram Followers',
+      link: '',
+      value: creator.instagram || 0
+    },
+    {
+      name: 'YouTube Subscribers',
+      link: '',
+      value: creator.youtube || 0
+    },
+  ]
+
+  const followersData = [
+    { name: "TikTok", value: Number(creator.tiktok?.replaceAll(',', '')) || 0 },
+    { name: "Instagram", value: Number(creator.instagram?.replaceAll(',', '')) || 0 },
+    { name: "YouTube", value: Number(creator.youtube?.replaceAll(',', '')) || 0 },
+  ];
+
+  const promotionData = [
+    {
+      name: "TikTok Sound",
+      value: creator.tiktok_sound || '$0',
+    },
+    {
+      name: "TikTok Brand",
+      value: creator.tiktok_brand || '$0',
+    },
+    {
+      name: "Instagram Sound",
+      value: creator.instagram_sound || '$0',
+    },
+    {
+      name: "Instagram Brand",
+      value: creator.instagram_brand || '$0',
+    },
+  ];
+
+  return { creatorInfo, followersData, promotionData }
+}
+
+export function findMaxValue(arr) {
+  let maxValue = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    const value = parseFloat(arr[i].value.replace(/[^0-9.-]+/g, ""));
+    maxValue = Math.max(value, maxValue);
+  }
+
+  return maxValue;
+}
