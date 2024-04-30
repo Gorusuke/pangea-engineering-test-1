@@ -1,0 +1,90 @@
+.main {
+  margin: 0 auto;
+  max-width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  gap: 30px;
+}
+
+.profile {
+  padding: 45px 20px;
+  width: max-content;
+  min-height: 525px;
+  border: 2px solid #0088FE;
+  border-radius: 30px;
+}
+
+.image {
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  height: 250px;
+  width: auto;
+}
+
+.title {
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-top: 2px dashed #0088FE;
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.info {
+  margin: 0;
+  font-weight: 500;
+}
+
+.infoCreator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.followerDistribution {
+  padding: 1rem;
+  width: 400px;
+  border: 2px solid #0088FE;
+  border-radius: 30px;
+}
+
+.promotionRatesContainer {
+  padding: 1rem;
+  border: 2px solid #0088FE;
+  border-radius: 30px;
+}
+
+.promotionRates {
+  padding: 0;
+}
+
+.promotionRatesData {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar {
+  height: 30px;
+  width: 220px;
+  color: #0088FE;
+  accent-color: currentColor;
+}
+
+.moreInfo {
+  text-align: center;
+  border: 2px solid #0088FE;
+  border-radius: 30px;
+}
