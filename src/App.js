@@ -27,6 +27,7 @@ import CreatorDetailsPage from "./Pages/Dashboard/Creators/creatorDetailsPage.js
 import AgencyCreatorRoster from './Pages/Dashboard/Creators/agency/agencypage.js';
 import CreatorConnect from './CreatorUser/CreatorPages/creatorConnect.js';
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import NewCreatorDetailsPage from './Pages/Dashboard/Creators/NewCreatorDetailsPage.js';
 
 const Home = React.lazy(() => import("./Pages/Home/Home"));
 
@@ -44,7 +45,8 @@ function App() {
           <Route path={routes.creatorSignup} element={<><PageTitle title="Creator Signup - Blitz" /><CreatorSignup /></>} />
           <Route path={routes.creatorConnect} element={<><PageTitle title="Creator Connect - Blitz" /><CreatorConnect /></>} />
           <Route path={routes.campaignReport} element={<><PageTitle title="Campaign Details - Blitz" /><CampaignDetailsPage /></>} />
-          <Route path={routes.creatorMediaKit} element={<><PageTitle title="Creator Media Kit - Blitz" /><CreatorDetailsPage /></>} />
+          {/* <Route path={routes.creatorMediaKit} element={<><PageTitle title="Creator Media Kit - Blitz" /><CreatorDetailsPage /></>} /> */}
+          <Route path={routes.creatorMediaKit} element={<><PageTitle title="Creator Media Kit - Blitz" /><NewCreatorDetailsPage /></>} />
           <Route path={routes.roster} element={<AgencyCreatorRoster />} />  {/* New Route */}
 
           <Route path="*" element={<><PageTitle title="404 Not Found - Blitz" /><Navigate to={routes.home} /></>} />
